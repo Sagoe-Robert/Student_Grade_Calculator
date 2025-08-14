@@ -38,10 +38,8 @@ String getLetterGrade(double finalScore) {
 }
 
 void main() {
-  print('--- UENR Grade Calculator for Dr. Kwame Asante ---');
-  print('This program calculates a student\'s final grade based on a weighted average.');
-  print('Weights: Continuous Assessment (20%), Project (30%), Exams (50%).');
-  
+  print('--- UENR Grade Calculator ---');
+ 
   while (true) {
     stdout.write('\nEnter student\'s name (or type "exit" to quit): ');
     String? studentName = stdin.readLineSync();
@@ -63,8 +61,7 @@ void main() {
     double finalScore = calculateFinalScore(continuousAssessment, projectScore, examScore);
     String letterGrade = getLetterGrade(finalScore);
 
-    print('\n=====================================');
-    print('   Grade Summary for $studentName');
+    print(' Grade Summary for $studentName ');
     print('=====================================');
     print('Continuous Assessment: ${continuousAssessment.toStringAsFixed(1)}');
     print('Project Score:         ${projectScore.toStringAsFixed(1)}');
@@ -72,8 +69,7 @@ void main() {
     print('-------------------------------------');
     print('Final Weighted Score:  ${finalScore.toStringAsFixed(2)}%');
     print('Letter Grade:          $letterGrade');
-    print('=====================================');
-
+   
     stdout.write('\nDo you want to calculate for another student? (yes/no): ');
     String? response = stdin.readLineSync()?.trim().toLowerCase();
     if (response != 'yes' && response != 'y') {
@@ -82,3 +78,4 @@ void main() {
     }
   }
 }
+
